@@ -1,6 +1,6 @@
 package com.pavankotha.catalogservice.domain;
 
- class ProductMapper {
+class ProductMapper {
 
     static Product toProduct(ProductEntity productEntity) {
         return new Product(
@@ -8,7 +8,6 @@ package com.pavankotha.catalogservice.domain;
                 productEntity.getName(),
                 productEntity.getDescription(),
                 productEntity.getImageUrl(),
-                productEntity.getPrice()
-        );
+                productEntity.getPrice());
     }
 }
