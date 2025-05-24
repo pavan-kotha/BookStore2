@@ -42,5 +42,6 @@ public class ProductService {
     public Optional<Product> getProductByCode(String code) {
         return productRepository.findByCode(code).map(ProductMapper::toProduct);
         // adding comments again
+        // testing github action flow
     }
 }
