@@ -28,6 +28,7 @@ public class OrderEventService {
     }
 
     void save(OrderCreatedEvent event) {
+        log.info("Saving block of code{}", event);
         OrderEventEntity orderEvent = new OrderEventEntity();
         orderEvent.setEventId(event.eventId());
         orderEvent.setEventType(OrderEventType.ORDER_CREATED);
@@ -82,6 +83,7 @@ public class OrderEventService {
 
     private void publishEvent(OrderEventEntity event) {
         OrderEventType eventType = event.getEventType();
+        log.info("In Publish part and eventype is {}", eventType);
         switch (eventType) {
             case ORDER_CREATED:
                 OrderCreatedEvent orderCreatedEvent = fromJsonPayload(event.getPayload(), OrderCreatedEvent.class);
